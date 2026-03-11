@@ -110,7 +110,7 @@ const HeroSection = () => {
               <img
                 src="/lovable-uploads/7bc7634d-7f9d-42af-a9a4-ff3ee899ea27.png"
                 alt="Psicóloga Carla Caroline"
-                className="relative w-full max-w-[420px] lg:max-w-[520px] h-auto object-cover rounded-lg"
+                className="relative w-full max-w-[480px] lg:max-w-[600px] h-auto object-cover rounded-lg"
                 style={{
                   filter: "drop-shadow(0 25px 50px rgba(0, 0, 0, 0.5))"
                 }}
@@ -120,12 +120,7 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Smooth gradient transition to next section */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
-        style={{
-          background: "linear-gradient(to bottom, transparent 0%, hsl(220, 20%, 97%) 100%)"
-        }}
-      />
+
     </section>
   );
 };

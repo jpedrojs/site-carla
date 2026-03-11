@@ -4,8 +4,33 @@ import clinicPhoto from "@/assets/clinic-kids.jpg";
 
 const AboutSection = () => {
   return (
-    <section id="sobre" className="py-32 lg:py-40 bg-muted/50">
-      <div className="container mx-auto px-6">
+    <section id="sobre" className="py-32 lg:py-40 bg-muted/50 relative overflow-hidden">
+      {/* Decorative background elements */}
+      <div className="absolute inset-0 opacity-40 pointer-events-none">
+        <div className="absolute top-1/3 left-5% w-80 h-80 rounded-full" style={{
+          background: "radial-gradient(circle, rgba(180, 140, 0, 0.1) 0%, transparent 70%)",
+          filter: "blur(100px)"
+        }} />
+        <div className="absolute bottom-20 right-10% w-96 h-96 rounded-full" style={{
+          background: "radial-gradient(circle, rgba(180, 140, 0, 0.08) 0%, transparent 70%)",
+          filter: "blur(120px)"
+        }} />
+      </div>
+
+      {/* Subtle noise texture */}
+      <div className="absolute inset-0 opacity-[0.015] mix-blend-overlay pointer-events-none">
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <filter id="aboutNoise">
+              <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" seed="15" />
+              <feColorMatrix type="saturate" values="0" />
+            </filter>
+          </defs>
+          <rect width="100%" height="100%" filter="url(#aboutNoise)" />
+        </svg>
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-20 max-w-6xl mx-auto">
           {/* Clinic photo */}
           <motion.div
@@ -13,7 +38,7 @@ const AboutSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="flex-1"
+            className="flex-1 relative"
           >
             <div className="relative group">
               <motion.div
@@ -36,8 +61,18 @@ const AboutSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
-            className="flex-1"
-          >
+            className="flex-1">
+            
+            {/* Decorative element */}
+            <motion.div
+              initial={{ opacity: 0, scaleX: 0 }}
+              whileInView={{ opacity: 1, scaleX: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="mb-6 h-1 w-16 rounded-full"
+              style={{ background: "linear-gradient(to right, transparent, rgba(180, 140, 0, 0.6), transparent)" }}
+            />
+            
             <p className="text-gold font-body text-sm tracking-[0.3em] uppercase mb-3">Sobre mim</p>
             <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-8">
               Sua saúde mental em <span className="text-gradient-gold">boas mãos</span>

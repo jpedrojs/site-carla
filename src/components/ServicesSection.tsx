@@ -24,15 +24,50 @@ const ServicesSection = () => {
   };
 
   return (
-    <section id="servicos" className="py-24 bg-card">
-      <div className="container mx-auto px-6">
+    <section id="servicos" className="py-24 bg-card relative overflow-hidden">
+      {/* Decorative background elements */}
+      <div className="absolute inset-0 opacity-30 pointer-events-none">
+        <div className="absolute top-20 right-5% w-64 h-64 rounded-full" style={{
+          background: "radial-gradient(circle, rgba(180, 140, 0, 0.08) 0%, transparent 70%)",
+          filter: "blur(60px)"
+        }} />
+        <div className="absolute bottom-40 left-10% w-96 h-96 rounded-full" style={{
+          background: "radial-gradient(circle, rgba(180, 140, 0, 0.06) 0%, transparent 70%)",
+          filter: "blur(80px)"
+        }} />
+      </div>
+
+      {/* Subtle noise texture */}
+      <div className="absolute inset-0 opacity-[0.02] mix-blend-overlay pointer-events-none">
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <filter id="servicesNoise">
+              <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" seed="10" />
+              <feColorMatrix type="saturate" values="0" />
+            </filter>
+          </defs>
+          <rect width="100%" height="100%" filter="url(#servicesNoise)" />
+        </svg>
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="text-center mb-16"
-        >
+          className="text-center mb-16 relative">
+          
+          {/* Decorative line above title */}
+          <motion.div
+            initial={{ opacity: 0, scaleX: 0 }}
+            whileInView={{ opacity: 1, scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="mx-auto mb-6 h-1 w-20 rounded-full"
+            style={{ background: "linear-gradient(to right, transparent, rgba(180, 140, 0, 0.6), transparent)" }}
+          />
+          
           <p className="text-gold font-body text-sm tracking-[0.3em] uppercase mb-3">Especialidades</p>
           <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground">
             Como posso te <span className="text-gradient-gold">ajudar</span>

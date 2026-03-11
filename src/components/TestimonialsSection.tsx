@@ -64,15 +64,50 @@ const TestimonialsSection = () => {
   };
 
   return (
-    <section className="py-32 lg:py-40 bg-muted/50">
-      <div className="container mx-auto px-6">
+    <section className="py-32 lg:py-40 bg-muted/50 relative overflow-hidden">
+      {/* Decorative background elements */}
+      <div className="absolute inset-0 opacity-35 pointer-events-none">
+        <div className="absolute top-20 right-15% w-80 h-80 rounded-full" style={{
+          background: "radial-gradient(circle, rgba(180, 140, 0, 0.08) 0%, transparent 70%)",
+          filter: "blur(100px)"
+        }} />
+        <div className="absolute bottom-10 left-5% w-96 h-96 rounded-full" style={{
+          background: "radial-gradient(circle, rgba(180, 140, 0, 0.07) 0%, transparent 70%)",
+          filter: "blur(120px)"
+        }} />
+      </div>
+
+      {/* Subtle noise texture */}
+      <div className="absolute inset-0 opacity-[0.02] mix-blend-overlay pointer-events-none">
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <filter id="testimonialsNoise">
+              <feTurbulence type="fractalNoise" baseFrequency="0.88" numOctaves="3" seed="20" />
+              <feColorMatrix type="saturate" values="0" />
+            </filter>
+          </defs>
+          <rect width="100%" height="100%" filter="url(#testimonialsNoise)" />
+        </svg>
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="text-center mb-20"
-        >
+          className="text-center mb-20 relative">
+          
+          {/* Decorative line */}
+          <motion.div
+            initial={{ opacity: 0, scaleX: 0 }}
+            whileInView={{ opacity: 1, scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="mx-auto mb-6 h-1 w-20 rounded-full"
+            style={{ background: "linear-gradient(to right, transparent, rgba(180, 140, 0, 0.6), transparent)" }}
+          />
+          
           <p className="text-gold font-body text-sm tracking-[0.3em] uppercase mb-3">Depoimentos</p>
           <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground">
             O que dizem sobre o <span className="text-gradient-gold">atendimento</span>
