@@ -67,9 +67,10 @@ const TestimonialsSection = () => {
     <section className="py-32 lg:py-40 bg-muted/50">
       <div className="container mx-auto px-6">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="text-center mb-20"
         >
           <p className="text-gold font-body text-sm tracking-[0.3em] uppercase mb-3">Depoimentos</p>
@@ -104,7 +105,11 @@ const TestimonialsSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                className="min-w-[340px] md:min-w-[400px] snap-start bg-card rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-border hover:border-gold/40 flex flex-col group"
+                whileHover={{ y: -8, boxShadow: "0 20px 60px -15px rgba(0, 0, 0, 0.15)" }}
+                className="min-w-[340px] md:min-w-[400px] snap-start bg-white rounded-2xl p-8 transition-all duration-400 border border-gray-100 hover:border-gold/30 flex flex-col group shadow-sm"
+                style={{
+                  boxShadow: "0 1px 3px rgba(0, 0, 0, 0.05)"
+                }}
               >
                 <div className="flex items-center justify-between mb-6">
                   <div className="flex items-center gap-3">

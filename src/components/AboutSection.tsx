@@ -9,9 +9,10 @@ const AboutSection = () => {
         <div className="flex flex-col lg:flex-row items-center gap-20 max-w-6xl mx-auto">
           {/* Clinic photo */}
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="flex-1"
           >
             <div className="relative group">
@@ -31,9 +32,10 @@ const AboutSection = () => {
 
           {/* Text */}
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
             className="flex-1"
           >
             <p className="text-gold font-body text-sm tracking-[0.3em] uppercase mb-3">Sobre mim</p>

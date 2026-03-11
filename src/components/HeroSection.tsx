@@ -3,126 +3,116 @@ import { MessageCircle } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen bg-gradient-navy overflow-hidden flex items-center">
-      {/* Subtle noise texture overlay - professional depth */}
-      <div className="absolute inset-0 opacity-10 mix-blend-overlay pointer-events-none">
+    <section className="relative min-h-screen overflow-hidden flex items-center" style={{
+      background: "radial-gradient(ellipse 140% 100% at 50% 10%, hsl(220, 45%, 18%) 0%, hsl(220, 50%, 12%) 100%)"
+    }}>
+      {/* Noise texture overlay - 3% opacity for premium feel */}
+      <div className="absolute inset-0 opacity-[0.03] mix-blend-overlay pointer-events-none">
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <filter id="heroNoise">
-              <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" seed="2" result="noise" />
-              <feDisplacementMap in="SourceGraphic" in2="noise" scale="1" />
+              <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" seed="5" />
+              <feColorMatrix type="saturate" values="0" />
             </filter>
           </defs>
-          <rect width="100%" height="100%" fill="hsl(220, 50%, 15%)" filter="url(#heroNoise)" />
+          <rect width="100%" height="100%" filter="url(#heroNoise)" />
         </svg>
       </div>
 
-      {/* Radial gradient light source - emanating from behind the image */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 right-1/3 w-[900px] h-[900px] opacity-25"
-          style={{
-            background: "radial-gradient(ellipse 900px 700px at 60% 40%, rgba(180, 140, 0, 0.08) 0%, transparent 60%)",
-            filter: "blur(100px)"
-          }}
-        />
-      </div>
-
-      {/* Floating organic blobs - very subtle */}
+      {/* Floating organic blobs - glassmorphism effect */}
       <motion.div
-        animate={{ y: [0, -40, 0], x: [0, 15, 0] }}
-        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-1/4 right-1/4 w-96 h-96 opacity-4 pointer-events-none rounded-full"
+        animate={{ y: [0, -50, 0], x: [0, 20, 0], scale: [1, 1.1, 1] }}
+        transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute top-[15%] right-[25%] w-[600px] h-[600px] pointer-events-none rounded-full"
         style={{
-          background: "radial-gradient(circle, rgba(180, 140, 0, 0.2) 0%, transparent 70%)",
-          filter: "blur(80px)"
+          background: "radial-gradient(circle, rgba(180, 140, 0, 0.12) 0%, transparent 70%)",
+          filter: "blur(120px)",
+          opacity: 0.6
         }}
       />
       <motion.div
-        animate={{ y: [0, 35, 0], x: [0, -20, 0] }}
-        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        className="absolute bottom-1/4 left-1/3 w-80 h-80 opacity-3 pointer-events-none rounded-full"
+        animate={{ y: [0, 40, 0], x: [0, -30, 0], scale: [1, 1.15, 1] }}
+        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+        className="absolute bottom-[20%] left-[15%] w-[500px] h-[500px] pointer-events-none rounded-full"
         style={{
-          background: "radial-gradient(circle, rgba(180, 140, 0, 0.15) 0%, transparent 70%)",
-          filter: "blur(90px)"
-        }}
-      />
-      <motion.div
-        animate={{ y: [0, -25, 0] }}
-        transition={{ duration: 14, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-        className="absolute top-1/2 left-1/4 w-72 h-72 opacity-3 pointer-events-none rounded-full"
-        style={{
-          background: "radial-gradient(circle, rgba(220, 220, 220, 0.08) 0%, transparent 70%)",
-          filter: "blur(100px)"
+          background: "radial-gradient(circle, rgba(200, 180, 120, 0.08) 0%, transparent 70%)",
+          filter: "blur(100px)",
+          opacity: 0.5
         }}
       />
 
-      <div className="container mx-auto px-6 py-32 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-20 max-w-7xl mx-auto">
-          {/* Text Content - Premium Typography */}
+      <div className="container mx-auto px-6 lg:px-12 py-20 lg:py-24 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 max-w-7xl mx-auto items-center">
+          {/* Text Content - Left Column */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-            className="flex-1 text-center lg:text-left">
-            
-            <div className="flex items-center gap-3 justify-center lg:justify-start mb-8">
-              <span className="text-gold text-6xl leading-none">Ψ</span>
+            transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+            className="order-2 lg:order-1">
+
+            <div className="flex items-center gap-3 mb-6">
+              <span className="text-gold text-5xl leading-none">Ψ</span>
               <div>
-                <p className="text-gold-light/75 font-body text-xs tracking-widest uppercase font-semibold">
+                <p className="text-gold-light/80 font-body text-[10px] tracking-[0.25em] uppercase font-bold">
                   Psicóloga
                 </p>
-                <p className="text-gold-light/60 font-body text-xs tracking-widest">CRP 14/08385-4</p>
+                <p className="text-gold-light/50 font-body text-[10px] tracking-wider">CRP 14/08385-4</p>
               </div>
             </div>
 
-            <h1 className="text-6xl md:text-7xl lg:text-8xl font-serif font-bold text-primary-foreground leading-tight mb-8" style={{ fontFamily: "'Playfair Display', serif" }}>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-6"
+                style={{ fontFamily: "'Playfair Display', serif" }}>
               Carla <span className="text-gradient-gold">Caroline</span>
             </h1>
 
-            <p className="text-2xl md:text-3xl lg:text-4xl font-display font-semibold text-gold-light/85 mb-8 leading-snug">
-              Uma vida saudável<br />começa com uma <span className="text-gradient-gold">mente saudável</span>.
+            <p className="text-xl md:text-2xl lg:text-3xl font-display font-semibold text-gold-light/90 mb-6 leading-tight">
+              Uma vida saudável começa com uma <span className="text-gradient-gold">mente saudável</span>
             </p>
 
-            <p className="text-gold-light/60 font-body text-base mb-12 max-w-sm leading-relaxed">
+            <p className="text-gold-light/60 font-body text-base md:text-lg mb-10 max-w-lg leading-relaxed">
               Especialista em Terapia Cognitivo-Comportamental para adultos e crianças. Atendimento presencial e online.
             </p>
 
             <motion.a
-              href="https://wa.me/5500000000000?text=Olá! Gostaria de agendar uma consulta."
+              href="https://wa.me/556791902497?text=Olá, Carla! Gostaria de agendar uma consulta."
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center gap-3 bg-gradient-gold text-accent-foreground font-body font-bold px-8 py-4 rounded-full shadow-gold text-lg transition-all duration-300 hover:shadow-2xl">
-              <MessageCircle className="w-5 h-5" />
-              Agende sua consulta
+              whileTap={{ scale: 0.98 }}
+              className="inline-flex items-center gap-3 font-body font-bold px-9 py-4 rounded-full text-lg shadow-lg relative overflow-hidden group"
+              style={{
+                background: "linear-gradient(135deg, hsl(45, 85%, 58%) 0%, hsl(42, 80%, 50%) 100%)",
+                boxShadow: "0 10px 40px -10px rgba(180, 140, 0, 0.4)"
+              }}>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+              <MessageCircle className="w-5 h-5 relative z-10" style={{ color: "hsl(220, 50%, 15%)" }} />
+              <span className="relative z-10" style={{ color: "hsl(220, 50%, 15%)" }}>Fale comigo</span>
             </motion.a>
           </motion.div>
 
-          {/* Professional Image - Minimal and Clean */}
+          {/* Professional Image - Right Column */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-            className="flex-shrink-0 flex-1 flex justify-center lg:justify-end relative">
-            
-            {/* Subtle glow container */}
+            transition={{ duration: 1.2, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+            className="order-1 lg:order-2 flex justify-center lg:justify-end">
+
             <div className="relative">
-              <div className="absolute -inset-16 opacity-0 hover:opacity-100 transition-opacity duration-700"
+              {/* Subtle depth shadow behind image */}
+              <div
+                className="absolute -inset-4 rounded-lg opacity-40"
                 style={{
-                  background: "radial-gradient(ellipse 600px 500px at center, rgba(180, 140, 0, 0.08) 0%, transparent 70%)",
-                  filter: "blur(100px)"
+                  background: "radial-gradient(ellipse at center, rgba(0, 0, 0, 0.3) 0%, transparent 70%)",
+                  filter: "blur(30px)"
                 }}
               />
-              
-              {/* Clean image without artificial borders */}
+
               <img
                 src="/lovable-uploads/7bc7634d-7f9d-42af-a9a4-ff3ee899ea27.png"
                 alt="Psicóloga Carla Caroline"
-                className="relative w-80 md:w-96 lg:w-[440px] object-cover shadow-2xl transition-all duration-500 hover:shadow-[0_40px_80px_rgba(180,140,0,0.15)]"
+                className="relative w-full max-w-[420px] lg:max-w-[520px] h-auto object-cover rounded-lg"
                 style={{
-                  borderRadius: "6px",
-                  clipPath: "polygon(0 0.5%, 99.5% 0, 100% 0.5%, 100% 99.5%, 99.5% 100%, 0.5% 100%, 0 99.5%, 0 0.5%)"
+                  filter: "drop-shadow(0 25px 50px rgba(0, 0, 0, 0.5))"
                 }}
               />
             </div>
@@ -130,12 +120,12 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Separator wave */}
-      <div className="absolute bottom-0 left-0 right-0">
-        <svg viewBox="0 0 1440 120" fill="none" className="w-full">
-          <path d="M0,80 C360,120 1080,40 1440,80 L1440,120 L0,120 Z" fill="hsl(220, 20%, 97%)" />
-        </svg>
-      </div>
+      {/* Smooth gradient transition to next section */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
+        style={{
+          background: "linear-gradient(to bottom, transparent 0%, hsl(220, 20%, 97%) 100%)"
+        }}
+      />
     </section>
   );
 };

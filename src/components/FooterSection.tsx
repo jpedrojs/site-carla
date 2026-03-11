@@ -3,9 +3,17 @@ import { Heart } from "lucide-react";
 
 const FooterSection = () => {
   return (
-    <footer id="contato" className="relative bg-primary overflow-hidden py-20 lg:py-28">
-      {/* Subtle noise texture - professional finish */}
-      <div className="absolute inset-0 opacity-8 mix-blend-overlay pointer-events-none">
+    <footer id="contato" className="relative overflow-hidden">
+      {/* Smooth gradient transition from previous section */}
+      <div className="absolute top-0 left-0 right-0 h-32 pointer-events-none"
+        style={{
+          background: "linear-gradient(to bottom, hsl(220, 20%, 97%) 0%, hsl(220, 50%, 15%) 100%)"
+        }}
+      />
+
+      <div className="relative bg-primary py-20 lg:py-28">
+        {/* Subtle noise texture - professional finish */}
+        <div className="absolute inset-0 opacity-8 mix-blend-overlay pointer-events-none">
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <filter id="footerNoise">
@@ -74,6 +82,7 @@ const FooterSection = () => {
         >
           © 2024 Carla Caroline. Todos os direitos reservados.
         </motion.p>
+      </div>
       </div>
     </footer>
   );

@@ -27,9 +27,10 @@ const ServicesSection = () => {
     <section id="servicos" className="py-24 bg-card">
       <div className="container mx-auto px-6">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="text-center mb-16"
         >
           <p className="text-gold font-body text-sm tracking-[0.3em] uppercase mb-3">Especialidades</p>
@@ -65,9 +66,13 @@ const ServicesSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                className="min-w-[calc(50%-12px)] sm:min-w-[calc(50%-12px)] snap-start bg-background rounded-3xl p-6 sm:p-10 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group border border-border hover:border-gold/40"
+                whileHover={{ y: -8, boxShadow: "0 20px 60px -15px rgba(0, 0, 0, 0.15)" }}
+                className="min-w-[calc(50%-12px)] sm:min-w-[calc(50%-12px)] snap-start bg-white rounded-2xl p-6 sm:p-10 transition-all duration-400 group border border-gray-100 hover:border-gold/30 shadow-sm"
+                style={{
+                  boxShadow: "0 1px 3px rgba(0, 0, 0, 0.05)"
+                }}
               >
-                <div className="w-16 h-16 rounded-2xl bg-gradient-gold flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-16 h-16 rounded-xl bg-gradient-gold flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-md">
                   <s.icon className="w-8 h-8 text-accent-foreground" />
                 </div>
                 <h3 className="text-xl sm:text-2xl font-display font-bold text-foreground mb-3 sm:mb-4 break-words">{s.title}</h3>
