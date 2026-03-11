@@ -65,9 +65,9 @@ const ServicesSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                className="min-w-[calc(50%-12px)] sm:min-w-[calc(50%-12px)] snap-start bg-background rounded-3xl p-6 sm:p-10 shadow-lg hover:shadow-xl transition-all group border border-border hover:border-gold/30"
+                className="min-w-[calc(50%-12px)] sm:min-w-[calc(50%-12px)] snap-start bg-background rounded-3xl p-6 sm:p-10 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group border border-border hover:border-gold/40"
               >
-                <div className="w-16 h-16 rounded-2xl bg-gradient-gold flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-gold flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <s.icon className="w-8 h-8 text-accent-foreground" />
                 </div>
                 <h3 className="text-xl sm:text-2xl font-display font-bold text-foreground mb-3 sm:mb-4 break-words">{s.title}</h3>

@@ -64,13 +64,13 @@ const TestimonialsSection = () => {
   };
 
   return (
-    <section className="py-24 bg-muted/50">
+    <section className="py-32 lg:py-40 bg-muted/50">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
           <p className="text-gold font-body text-sm tracking-[0.3em] uppercase mb-3">Depoimentos</p>
           <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground">
@@ -81,13 +81,13 @@ const TestimonialsSection = () => {
         <div className="relative">
           <button
             onClick={() => scroll("left")}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-card shadow-navy flex items-center justify-center text-foreground hover:bg-gold hover:text-accent-foreground transition-colors -ml-3 lg:-ml-6"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-card shadow-navy hover:shadow-2xl hover:bg-gold hover:text-accent-foreground flex items-center justify-center text-foreground transition-all duration-300 -ml-3 lg:-ml-6"
           >
             <ChevronLeft className="w-6 h-6" />
           </button>
           <button
             onClick={() => scroll("right")}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-card shadow-navy flex items-center justify-center text-foreground hover:bg-gold hover:text-accent-foreground transition-colors -mr-3 lg:-mr-6"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-card shadow-navy hover:shadow-2xl hover:bg-gold hover:text-accent-foreground flex items-center justify-center text-foreground transition-all duration-300 -mr-3 lg:-mr-6"
           >
             <ChevronRight className="w-6 h-6" />
           </button>
@@ -104,19 +104,19 @@ const TestimonialsSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                className="min-w-[340px] md:min-w-[400px] snap-start bg-card rounded-2xl p-8 shadow-lg border border-border hover:border-gold/30 transition-all flex flex-col"
+                className="min-w-[340px] md:min-w-[400px] snap-start bg-card rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-border hover:border-gold/40 flex flex-col group"
               >
-                <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center justify-between mb-6">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-gradient-gold flex items-center justify-center">
+                    <div className="w-12 h-12 rounded-full bg-gradient-gold flex items-center justify-center shadow-gold group-hover:scale-110 transition-transform duration-300">
                       {t.type === "child" ? (
-                        <Baby className="w-5 h-5 text-accent-foreground" />
+                        <Baby className="w-6 h-6 text-accent-foreground" />
                       ) : (
-                        <User className="w-5 h-5 text-accent-foreground" />
+                        <User className="w-6 h-6 text-accent-foreground" />
                       )}
                     </div>
                     <div>
-                      <p className="font-display font-bold text-foreground text-sm">{t.name}</p>
+                      <p className="font-display font-bold text-foreground">{t.name}</p>
                       <p className="text-muted-foreground font-body text-xs">
                         {t.type === "child" ? "Terapia Infantil" : "Terapia para Adultos"}
                       </p>
