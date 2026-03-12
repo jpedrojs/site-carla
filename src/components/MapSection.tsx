@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { MapPin, Phone } from "lucide-react";
+import { MapPin } from "lucide-react";
+import mapsScreenshot from "../assets/maps-screenshot.png";
 
 const CLINIC_ADDRESS = "Av. Prof. João Thomes, 312 - Q.ta da Lagoa, Três Lagoas - MS, 79611-170";
 const GOOGLE_MAPS_URL = `https://maps.google.com/maps/search/${encodeURIComponent(CLINIC_ADDRESS)}`;
@@ -82,7 +83,7 @@ const MapSection = () => {
             className="relative overflow-hidden rounded-xl shadow-xl cursor-pointer group"
           >
             <img
-              src="/src/assets/maps-screenshot.png"
+              src={mapsScreenshot}
               alt="Localização da clínica - Mapa do Google Maps"
               className="w-full h-auto object-cover rounded-xl transition-transform duration-300 group-hover:scale-105"
             />
