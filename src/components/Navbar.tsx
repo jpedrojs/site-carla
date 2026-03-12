@@ -9,6 +9,7 @@ const Navbar = () => {
     { label: "Início", href: "#" },
     { label: "Serviços", href: "#servicos" },
     { label: "Sobre", href: "#sobre" },
+    { label: "Localização", href: "#localizacao" },
     { label: "Contato", href: "#contato" },
   ];
 

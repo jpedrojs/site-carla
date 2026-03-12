@@ -49,7 +49,7 @@ const WhatsAppCTA = () => {
             >
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
               <MessageCircle className="w-6 h-6 relative z-10" style={{ color: "hsl(220, 50%, 15%)" }} />
-              <span className="relative z-10" style={{ color: "hsl(220, 50%, 15%)" }}>Fale comigo no WhatsApp</span>
+              <span className="relative z-10" style={{ color: "hsl(220, 50%, 15%)" }}>Agendar uma consulta</span>
             </motion.a>
           </motion.div>
         </div>
