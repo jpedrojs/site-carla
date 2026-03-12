@@ -7,10 +7,11 @@ const WhatsAppCTA = () => {
   return (
     <>
       {/* Full section CTA */}
-      <section className="py-20 bg-gradient-navy relative overflow-hidden">
+      <section className="py-28 lg:py-40 bg-gradient-navy relative overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute top-10 left-1/4 w-64 h-64 bg-gold/10 rounded-full blur-3xl" />
-          <div className="absolute bottom-10 right-1/4 w-80 h-80 bg-gold/5 rounded-full blur-3xl" />
+          <div className="absolute top-20 left-1/4 w-96 h-96 bg-gold/15 rounded-full blur-3xl" />
+          <div className="absolute bottom-20 right-1/4 w-96 h-96 bg-gold/10 rounded-full blur-3xl" />
+          <div className="absolute top-1/3 right-1/3 w-64 h-64 bg-gold/8 rounded-full blur-3xl" />
         </div>
 
         <div className="container mx-auto px-6 relative z-10 text-center">
@@ -20,19 +21,27 @@ const WhatsAppCTA = () => {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           >
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-primary-foreground mb-4">
+            <motion.div
+              animate={{ scale: [1, 1.03, 1] }}
+              transition={{ duration: 4, repeat: Infinity }}
+              className="inline-block mb-6"
+              style={{ willChange: "transform" }}
+            >
+              <span className="text-gold text-6xl">✨</span>
+            </motion.div>
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-primary-foreground mb-6">
               Pronta para te <span className="text-gradient-gold">acolher</span>
             </h2>
-            <p className="text-gold-light/70 font-body text-lg max-w-md mx-auto mb-10">
-              Dê o primeiro passo. Agende sua sessão pelo WhatsApp e comece sua jornada de autocuidado.
+            <p className="text-gold-light/70 font-body text-xl max-w-2xl mx-auto mb-12">
+              Dê o primeiro passo. Agende sua sessão pelo WhatsApp e comece sua jornada de autocuidado e transformação pessoal.
             </p>
             <motion.a
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-              className="inline-flex items-center gap-3 font-body font-bold px-10 py-5 rounded-full text-xl relative overflow-hidden group shadow-lg"
+              whileHover={{ scale: 1.08 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-flex items-center gap-3 font-body font-bold px-14 py-7 rounded-full text-2xl relative overflow-hidden group shadow-2xl"
               style={{
                 background: "linear-gradient(135deg, hsl(45, 85%, 58%) 0%, hsl(42, 80%, 50%) 100%)",
                 boxShadow: "0 10px 40px -10px rgba(180, 140, 0, 0.4)"

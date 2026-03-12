@@ -11,7 +11,7 @@ const FooterSection = () => {
         }}
       />
 
-      <div className="relative bg-primary py-20 lg:py-28">
+      <div className="relative bg-primary py-4 lg:py-6">
         {/* Subtle noise texture - professional finish */}
         <div className="absolute inset-0 opacity-8 mix-blend-overlay pointer-events-none">
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
@@ -40,7 +40,7 @@ const FooterSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground mb-4"
+            className="font-display text-lg md:text-xl lg:text-2xl font-bold text-primary-foreground mb-1\"
           >
             Carla <span className="text-gradient-gold">Caroline</span>
           </motion.h3>
@@ -50,7 +50,7 @@ const FooterSection = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1, duration: 0.8 }}
-            className="text-gold-light/70 font-body text-base mb-10 tracking-wide"
+            className="text-gold-light/70 font-body text-xs md:text-sm mb-1 tracking-wide\"
           >
             Psicóloga · Especialista em TCC · CRP 14/08385-4
           </motion.p>
@@ -60,27 +60,24 @@ const FooterSection = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2, duration: 0.8 }}
-            className="flex items-center justify-center gap-2 text-gold-light/50 text-sm font-body"
+            className="text-gold-light/50 text-xs font-body inline-flex items-center gap-1"
           >
             <span>Feito com</span>
-            <motion.div animate={{ scale: [1, 1.15, 1] }} transition={{ duration: 2.5, repeat: Infinity }}>
-              <Heart className="w-4 h-4 text-gold fill-gold" />
+            <motion.div animate={{ scale: [1, 1.1, 1] }} transition={{ duration: 3, repeat: Infinity }} style={{ willChange: "transform" }}>
+              <Heart className="w-3 h-3 text-gold fill-gold" />
             </motion.div>
             <span>para cuidar de você</span>
           </motion.div>
         </div>
 
-        {/* Divider line */}
-        <div className="mt-12 pt-12 border-t border-gold/10" />
-        
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="text-center text-gold-light/40 text-xs font-body mt-8"
+          className="text-center text-gold-light/40 text-xs font-body mt-2"
         >
-          © 2024 Carla Caroline. Todos os direitos reservados.
+          © 2024 Carla Caroline · Todos os direitos reservados
         </motion.p>
       </div>
       </div>

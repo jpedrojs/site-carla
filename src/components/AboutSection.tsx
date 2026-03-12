@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { GraduationCap, Monitor, MapPin } from "lucide-react";
-import clinicPhoto from "@/assets/clinic-kids.jpg";
+import clinicPhoto from "@/assets/carla-photo.jpg";
 
 const AboutSection = () => {
   return (
@@ -42,9 +42,10 @@ const AboutSection = () => {
           >
             <div className="relative group">
               <motion.div
-                animate={{ scale: [1, 1.03, 1] }}
-                transition={{ duration: 5, repeat: Infinity }}
-                className="absolute -inset-6 bg-gradient-to-br from-gold via-gold/40 to-transparent rounded-2xl opacity-20 blur-2xl group-hover:opacity-35 transition-opacity"
+                animate={{ scale: [1, 1.02, 1] }}
+                transition={{ duration: 6, repeat: Infinity }}
+                className="absolute -inset-6 bg-gradient-to-br from-gold via-gold/40 to-transparent rounded-2xl opacity-10 blur-xl group-hover:opacity-6 transition-opacity"
+                style={{ willChange: "transform" }}
               />
               <div className="absolute -inset-3 bg-gradient-gold rounded-2xl opacity-10 blur-xl" />
               <img
@@ -79,9 +80,8 @@ const AboutSection = () => {
             </h2>
             <p className="text-muted-foreground font-body leading-relaxed mb-10 text-lg">
               Sou Carla Caroline, psicóloga com especialização em Terapia Cognitivo-Comportamental (TCC).
-              Atendo adultos e crianças, tanto presencialmente em minha clínica quanto online via Google Meet.
-              Meu espaço clínico é pensado especialmente para crianças, com brinquedos, livros e jogos
-              que tornam o processo terapêutico mais leve e acolhedor.
+              Atendo adultos e adolescentes, tanto presencialmente em minha clínica quanto online via Google Meet.
+              Meu espaço clínico é acolhedor e preparado para oferecer um ambiente seguro e confortável para o processo terapêutico.
             </p>
 
             <div className="space-y-6">
@@ -91,7 +91,7 @@ const AboutSection = () => {
                 </div>
                 <div>
                   <h4 className="font-display font-semibold text-foreground text-lg">Especialista em TCC</h4>
-                  <p className="text-muted-foreground font-body text-base mt-1">Formação e especialização em Terapia Cognitivo-Comportamental</p>
+                  <p className="text-muted-foreground font-body text-base mt-1 text-justify">Formação e especialização em Terapia Cognitivo-Comportamental</p>
                 </div>
               </div>
               <div className="flex items-start gap-5">
@@ -100,7 +100,7 @@ const AboutSection = () => {
                 </div>
                 <div>
                   <h4 className="font-display font-semibold text-foreground text-lg">Atendimento Online</h4>
-                  <p className="text-muted-foreground font-body text-base mt-1">Sessões via Google Meet com a mesma qualidade do presencial</p>
+                  <p className="text-muted-foreground font-body text-base mt-1 text-justify">Sessões via Google Meet com a mesma qualidade do presencial</p>
                 </div>
               </div>
               <div className="flex items-start gap-5">
@@ -109,7 +109,7 @@ const AboutSection = () => {
                 </div>
                 <div>
                   <h4 className="font-display font-semibold text-foreground text-lg">Clínica Acolhedora</h4>
-                  <p className="text-muted-foreground font-body text-base mt-1">Espaço adequado para crianças com brinquedos, livros e jogos</p>
+                  <p className="text-muted-foreground font-body text-base mt-1 text-justify">Ambiente acolhedor e confortável para sessões presenciais</p>
                 </div>
               </div>
             </div>

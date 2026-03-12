@@ -10,10 +10,10 @@ const testimonials = [
     text: "A Carla me ajudou a superar uma fase muito difícil de ansiedade. O acolhimento dela é incrível e as técnicas da TCC mudaram minha vida.",
   },
   {
-    name: "Família do Pedro (8 anos)",
-    type: "child" as const,
+    name: "Rafael M.",
+    type: "adult" as const,
     stars: 5,
-    text: "Meu filho adora ir nas sessões! O espaço é lindo e a Carla sabe como se conectar com crianças. Vimos uma evolução enorme no comportamento dele.",
+    text: "Como pai de um adolescente com dificuldades comportamentais, a Carla foi essencial na orientação familiar. Vimos mudanças significativas em pouco tempo.",
   },
   {
     name: "Carlos R.",
@@ -22,10 +22,10 @@ const testimonials = [
     text: "Depois de anos adiando, finalmente procurei ajuda. A Carla é extremamente profissional e o atendimento online é muito prático. Recomendo demais.",
   },
   {
-    name: "Família da Sofia (6 anos)",
-    type: "child" as const,
+    name: "Beatriz A.",
+    type: "adult" as const,
     stars: 5,
-    text: "A Sofia tem TEA e a Carla foi a profissional que mais entendeu as necessidades dela. Os brinquedos e jogos tornam tudo mais leve.",
+    text: "Começar terapia na adolescência foi a melhor decisão. A Carla me ajudou a entender meus sentimentos e a lidar com a ansiedade social.",
   },
   {
     name: "Juliana M.",
@@ -34,10 +34,10 @@ const testimonials = [
     text: "Eu e meu marido fizemos terapia de casal com a Carla e foi transformador. Ela nos ajudou a reconstruir nossa comunicação.",
   },
   {
-    name: "Família do Lucas (10 anos)",
-    type: "child" as const,
-    stars: 4,
-    text: "O Lucas tinha muita dificuldade na escola por causa do TDAH. Com o acompanhamento da Carla, ele melhorou muito o foco e a autoestima.",
+    name: "Família da Fernanda",
+    type: "adult" as const,
+    stars: 5,
+    text: "Minha filha era uma adolescente com muita dificuldade de autoestima. O trabalho da Carla foi fundamental para ela se reconectar consigo mesma.",
   },
 ];
 
@@ -140,8 +140,7 @@ const TestimonialsSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                whileHover={{ y: -8, boxShadow: "0 20px 60px -15px rgba(0, 0, 0, 0.15)" }}
-                className="min-w-[340px] md:min-w-[400px] snap-start bg-white rounded-2xl p-8 transition-all duration-400 border border-gray-100 hover:border-gold/30 flex flex-col group shadow-sm"
+                className="min-w-[340px] md:min-w-[400px] snap-start bg-white rounded-2xl p-8 transition-opacity transition-transform duration-300 border border-gray-100 hover:border-gold/30 flex flex-col group shadow-sm hover:shadow-md"
                 style={{
                   boxShadow: "0 1px 3px rgba(0, 0, 0, 0.05)"
                 }}
@@ -158,7 +157,7 @@ const TestimonialsSection = () => {
                     <div>
                       <p className="font-display font-bold text-foreground">{t.name}</p>
                       <p className="text-muted-foreground font-body text-xs">
-                        {t.type === "child" ? "Terapia Infantil" : "Terapia para Adultos"}
+                        {t.type === "child" ? "Terapia para Adolescentes" : "Terapia para Adultos"}
                       </p>
                     </div>
                   </div>

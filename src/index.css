@@ -172,14 +172,10 @@ html {
   animation: pulse-gold 2s ease-in-out infinite;
 }
 
-/* Enhanced global transitions */
+/* Enhanced global transitions - optimized */
 @layer components {
-  * {
-    @apply transition-all duration-300;
-  }
-
   button, a {
-    @apply transition-all duration-300;
+    @apply transition-colors duration-300;
   }
 
   /* Refined glow shadow utility */

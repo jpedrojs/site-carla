@@ -3,7 +3,7 @@ import { MessageCircle } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen overflow-hidden flex items-center" style={{
+    <section className="relative min-h-[380px] overflow-hidden flex items-center" style={{
       background: "radial-gradient(ellipse 140% 100% at 50% 10%, hsl(220, 45%, 18%) 0%, hsl(220, 50%, 12%) 100%)"
     }}>
       {/* Noise texture overlay - 3% opacity for premium feel */}
@@ -21,28 +21,30 @@ const HeroSection = () => {
 
       {/* Floating organic blobs - glassmorphism effect */}
       <motion.div
-        animate={{ y: [0, -50, 0], x: [0, 20, 0], scale: [1, 1.1, 1] }}
-        transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+        animate={{ y: [0, -30, 0], x: [0, 15, 0] }}
+        transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
         className="absolute top-[15%] right-[25%] w-[600px] h-[600px] pointer-events-none rounded-full"
         style={{
           background: "radial-gradient(circle, rgba(180, 140, 0, 0.12) 0%, transparent 70%)",
-          filter: "blur(120px)",
-          opacity: 0.6
+          filter: "blur(80px)",
+          opacity: 0.6,
+          willChange: "transform"
         }}
       />
       <motion.div
-        animate={{ y: [0, 40, 0], x: [0, -30, 0], scale: [1, 1.15, 1] }}
-        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+        animate={{ y: [0, 25, 0], x: [0, -20, 0] }}
+        transition={{ duration: 22, repeat: Infinity, ease: "easeInOut", delay: 1 }}
         className="absolute bottom-[20%] left-[15%] w-[500px] h-[500px] pointer-events-none rounded-full"
         style={{
           background: "radial-gradient(circle, rgba(200, 180, 120, 0.08) 0%, transparent 70%)",
-          filter: "blur(100px)",
-          opacity: 0.5
+          filter: "blur(80px)",
+          opacity: 0.5,
+          willChange: "transform"
         }}
       />
 
-      <div className="container mx-auto px-6 lg:px-12 py-20 lg:py-24 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 max-w-7xl mx-auto items-center">
+      <div className="container mx-auto px-6 lg:px-12 py-4 lg:py-8 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-2 lg:gap-6 max-w-7xl mx-auto items-center">
           {/* Text Content - Left Column */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
